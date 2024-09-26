@@ -9,7 +9,7 @@ class ItemController extends Controller
 {
 public function index(Item $item)
     {
-        return $item->get();
+        return view('items.index')->with(['items'=>$item->getPaginateByLimit()]);
     }
     
 }
