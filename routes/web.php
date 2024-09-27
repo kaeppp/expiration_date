@@ -15,3 +15,5 @@ use App\Http\Controllers\ItemController;
 */
 
 Route::get('/', [ItemController::class, 'index']);
+Route::get('/items/create', [ItemController::class, 'create']);
+Route::post('/items', [ItemController::class, 'store']);

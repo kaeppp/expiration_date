@@ -12,6 +12,7 @@
     
     <body>
         <h1>防災用食品管理リスト</h1>
+        <a href="/items/create">新規追加</a>
         <div class="items">
             @foreach($items as $item)
                 <div class="item">
