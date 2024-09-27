@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\ItemRequest;
 use App\Models\Item;
 
 class ItemController extends Controller
@@ -17,10 +17,11 @@ class ItemController extends Controller
             return view('items.create');
         }
         
-    public function store(Request $request, Item $item)
+    public function store(ItemRequest $request, Item $item)
         {
             $input = $request["item"];
             $item->fill($input)->save();
-            return redirect("/" . $item->id);
+            
+            return redirect("/");
         }
 }
