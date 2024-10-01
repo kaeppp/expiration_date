@@ -19,3 +19,4 @@ Route::get('/items/create', [ItemController::class, 'create']);
 Route::post('/items', [ItemController::class, 'store']);
 Route::get('/items/{item}/edit', [ItemController::class, 'edit']);
 Route::put('items/{item}', [ItemController::class, 'update']);
+Route::delete('items/{item}', [ItemController::class, 'delete']);
