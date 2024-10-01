@@ -37,4 +37,10 @@ class ItemController extends Controller
             
             return redirect("/");
         }
+        
+    public function delete(Item $item)
+        {
+            $item->delete();
+            return redirect('/');
+        }
 }

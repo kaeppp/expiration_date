@@ -2,12 +2,12 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
-        <title>新しく追加する</title>
+        <title>防災用食品編集</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>防災用食品を新しく更新する</h1>
+        <h1>防災用食品を新しく編集する</h1>
         <form action="/items/{{ $item->id }}" method="POST">
             @csrf
             @method('PUT')
@@ -30,7 +30,7 @@
                 <h3>メモ</h3>
                 <textarea name="item[memo]">{{ $item->memo }}</textarea>
             </div>
-            <input type="submit" value="更新"/>
+            <input type="submit" value="編集"/>
         </form>
         
         <div class="footer">

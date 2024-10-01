@@ -2,7 +2,7 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
-        <title>expiration_date</title>
+        <title>防災用食品管理リスト一覧</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -22,11 +22,28 @@
                     <p class="memo">メモ：{{ $item->memo }}</p>
                     <p class="updated_at">最終更新日：{{ $item->updated_at }}</p>
                 </div>
-                <div class="edit">
-                    <a href="/items/{{ $item->id }}/edit">編集</a>
-                </div>
+                    {{-- <div class="edit">
+                        <a href="/items/{{ $item->id }}/edit">編集</a>
+                    </div>  --}}
+                <form action="/items/{{ $item->id }}/edit" method="get">
+                    <button type="submit" >編集</button>
+                </form>
+                <form action="items/{{ $item->id }}" id="form_{{ $item->id }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button type="button" onclick="deleteItem({{ $item->id }})">削除</button>
+                </form>
             @endforeach
         </div>
         <div class="paginate">{{ $items->links() }}</div>
+        <script>
+            function deleteItem(id){
+                'use strict'
+                
+                if (confirm('削除すると復元できません。 \n本当に削除しますか？')) {
+                    document.getElementById(`form_${id}`).submit();
+                }
+            }
+        </script>
     </body>
 </html>
