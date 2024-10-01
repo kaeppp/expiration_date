@@ -22,6 +22,9 @@
                     <p class="memo">メモ：{{ $item->memo }}</p>
                     <p class="updated_at">最終更新日：{{ $item->updated_at }}</p>
                 </div>
+                <div class="edit">
+                    <a href="/items/{{ $item->id }}/edit">編集</a>
+                </div>
             @endforeach
         </div>
         <div class="paginate">{{ $items->links() }}</div>
