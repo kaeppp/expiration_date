@@ -45,5 +45,26 @@
                 }
             }
         </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const items = document.querySelectorAll('.item');
+                const today = new Date();
+
+                items.forEach(function(item) {
+                    const expirationDateElement = item.querySelector('.expiration_date');
+                    const expirationDateText = expirationDateElement.textContent.replace('賞味・消費期限：', '');
+                    const expirationDate = new Date(expirationDateText);
+                    /*const today = new Date();*/
+                    const timeDiff = expirationDate - today;
+                    const daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+    
+                    if (daysDiff <= 0) {
+                        expirationDateElement.style.color = 'red';
+                    } else if (daysDiff <= 7) {
+                        expirationDateElement.style.color = 'orange';
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
