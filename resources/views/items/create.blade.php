@@ -5,6 +5,8 @@
         <title>防災用食品新規追加</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        
     </head>
     <body>
         <h1>防災用食品を新しく追加する</h1>

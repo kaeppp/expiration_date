@@ -7,40 +7,59 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        
     </head>
     
     <body>
-        <h1>防災用食品管理リスト</h1>
-        <a href="/items/create">新規追加</a>
-        <div class="items">
-            @foreach($items as $item)
-                <div class="item">
-                    <h2 class="name">{{ $item->name }}</h2>
-                    <p class="stock">個数：{{ $item->stock }}個</p>
-                    <p class="expiration_date">賞味・消費期限：{{ $item->expiration_date }}</p>
-                    <p class="memo">メモ：{{ $item->memo }}</p>
-                    <p class="updated_at">最終更新日：{{ $item->updated_at }}</p>
-                </div>
-                    {{-- <div class="edit">
-                        <a href="/items/{{ $item->id }}/edit">編集</a>
-                    </div>  --}}
-                <form action="/items/{{ $item->id }}/edit" method="get">
-                    <button type="submit" >編集</button>
-                </form>
-                <form action="items/{{ $item->id }}" id="form_{{ $item->id }}" method="post">
+        <div class="bg-yellowkou pt-10 px-14 pb-14">
+            <div class="p-6 px-20 bg-yelloekou_2">
+                <h1 class="text-center sm:text-8xl font-dela mx-auto container pt-8 pl-6">防災用食品管理リスト</h1>
+                {{--<a href="/items/create">新規追加</a>--}}
+                <form action="/items/create" method="post">
                     @csrf
-                    @method('DELETE')
-                    <button type="button" onclick="deleteItem({{ $item->id }})">削除</button>
+                    <div class="font-dela sm:text-4xl w-72 my-10 ml-7 mr-7 px-7 py-5 bg-brown25l rounded-full text-black hover:bg-brown cursor-pointer">
+                        <button type="button" onclick="location.href='/items/create'" class="border-dashed border-4 rounded-full px-10 py-8 border-white">新規追加</button>
+                    </div>
                 </form>
-            @endforeach
+                
+                
+                <div class="flex flex-col gap-4 sm:text-xl justify-center font-zenkaku">
+                    @foreach($items as $item)
+                        <div class="flex gap-4 justify-center">
+                            <div class="block w-2/3 p-8 bg-white border-8 border-brown25l rounded-lg shadow-md">
+                                <h2 class="text-3xl pb-3 font-bold">{{ $item->name }}</h2>
+                                <p class="pb-2">個数：{{ $item->stock }}個</p>
+                                <p class="pb-2">賞味・消費期限：{{ $item->expiration_date }}</p>
+                                <p class="pb-2">メモ：{{ $item->memo }}</p>
+                                <p class="pt-6 pb-2">最終更新日：{{ $item->updated_at }}</p>
+                            </div>
+                            <div class="flex flex-col gap-8 rounded-full justify-center ">
+                                <form action="/items/{{ $item->id }}/edit" method="get">
+                                    <div class="text-white w-24 font-dela border border-blue1 bg-blue1 rounded-full flex justify-center items-center shadow-md p-4">
+                                        <button type="submit" class="border-dashed border-4 rounded-full border-white">編集</button>
+                                    </div>
+                                </form>
+                                <form action="items/{{ $item->id }}" id="form_{{ $item->id }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <div class="text-white w-24 font-dela border border-blue1 bg-blue1 rounded-full flex justify-center items-center shadow-md p-4">
+                                        <button type="button" onclick="deleteItem({{ $item->id }}) " class="border-dashed border-4 rounded-full border-white">削除</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <div class="paginate">{{ $items->links() }}</div>
+            </div>
         </div>
-        <div class="paginate">{{ $items->links() }}</div>
+        
         <script>
             function deleteItem(id){
                 'use strict'
                 
-                if (confirm('削除すると復元できません。 \n本当に削除しますか？')) {
+                if (confirm('削除すると復元でません。 \n本当に削除しますか？')) {
                     document.getElementById(`form_${id}`).submit();
                 }
             }
