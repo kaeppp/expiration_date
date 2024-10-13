@@ -18,7 +18,7 @@
                 {{--<a href="/items/create">新規追加</a>--}}
                 <form action="/items/create" method="post">
                     @csrf
-                    <div class="font-dela sm:text-4xl w-72 my-10 ml-7 mr-7 px-7 py-5 bg-brown25l rounded-full text-black hover:bg-brown cursor-pointer">
+                    <div class="font-dela sm:text-4xl w-72 my-16 ml-7 mr-7 px-7 py-5 bg-brown25l rounded-full text-black hover:bg-brown cursor-pointer">
                         <button type="button" onclick="location.href='/items/create'" class="border-dashed border-4 rounded-full px-10 py-8 border-white">新規追加</button>
                     </div>
                 </form>
@@ -26,25 +26,27 @@
                 
                 <div class="flex flex-col gap-4 sm:text-xl justify-center font-zenkaku">
                     @foreach($items as $item)
-                        <div class="flex gap-4 justify-center">
-                            <div class="block w-2/3 p-8 bg-white border-8 border-brown25l rounded-lg shadow-md">
-                                <h2 class="text-3xl pb-3 font-bold">{{ $item->name }}</h2>
-                                <p class="pb-2">個数：{{ $item->stock }}個</p>
-                                <p class="pb-2">賞味・消費期限：{{ $item->expiration_date }}</p>
-                                <p class="pb-2">メモ：{{ $item->memo }}</p>
-                                <p class="pt-6 pb-2">最終更新日：{{ $item->updated_at }}</p>
-                            </div>
-                            <div class="flex flex-col gap-8 rounded-full justify-center ">
+                        <div class="flex gap-4 justify-center mb-8">
+                            <!--<div class=item>-->
+                                <div class="item block w-2/3 p-8 bg-white border-8 border-brown25l rounded-lg shadow-md justify-center">
+                                    <h2 class="text-xl pb-3 font-bold">{{ $item->name }}</h2>
+                                    <p class="pb-2">個数：{{ $item->stock }}個</p>
+                                    <p class="expiration_date pb-2">賞味・消費期限：{{ $item->expiration_date }}</p>
+                                    <p class="pb-2">メモ：{{ $item->memo }}</p>
+                                    <p class="pt-6 pb-2 text-right text-gray-500">最終更新日：{{ $item->updated_at }}</p>
+                                </div>
+                            <!--</div>-->
+                            <div class="w-36 flex flex-col gap-8 rounded-full justify-center ">
                                 <form action="/items/{{ $item->id }}/edit" method="get">
-                                    <div class="text-white w-24 font-dela border border-blue1 bg-blue1 rounded-full flex justify-center items-center shadow-md p-4">
-                                        <button type="submit" class="border-dashed border-4 rounded-full border-white">編集</button>
+                                    <div class="size-32 font-dela border border-blue1 bg-blue1 rounded-full flex justify-center items-center shadow-md hover:bg-blue2">
+                                        <button type="submit" class="text-2xl size-28 border-dashed border-4 rounded-full border-white">編集</button>
                                     </div>
                                 </form>
                                 <form action="items/{{ $item->id }}" id="form_{{ $item->id }}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <div class="text-white w-24 font-dela border border-blue1 bg-blue1 rounded-full flex justify-center items-center shadow-md p-4">
-                                        <button type="button" onclick="deleteItem({{ $item->id }}) " class="border-dashed border-4 rounded-full border-white">削除</button>
+                                    <div class="size-32 font-dela border border-blue1 bg-blue1 rounded-full flex justify-center items-center shadow-md p-2 hover:bg-blue2">
+                                        <button type="button" onclick="deleteItem({{ $item->id }}) " class="text-2xl size-28 border-dashed border-4 rounded-full border-white">削除</button>
                                     </div>
                                 </form>
                             </div>

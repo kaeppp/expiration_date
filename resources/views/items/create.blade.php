@@ -9,37 +9,50 @@
         
     </head>
     <body>
-        <h1>防災用食品を新しく追加する</h1>
-        <form action="/items" method="POST">
-            @csrf
-            <div class="name">
-                <h3>商品名</h3>
-                <input type="text" name="item[name]" placeholder="商品名" value="{{ old('item.name') }}"/>
-                <p class="name_error" style="color:red">{{ $errors->first('item.name') }}</p>
+        <div class="bg-yellowkou pt-10 px-14 pb-14">
+            <div class="p-6 px-20 bg-yelloekou_2">
+                <h1 class="text-center sm:text-8xl font-dela mx-auto container pt-8 pl-6">防災用食品を新しく追加する</h1>
+                <form action="/items" method="POST" class="justify-center">
+                    @csrf
+                    <div class="block w-5/6 mx-auto mt-20 mb-8">
+                        <h3 class="sm:text-4xl font-dela">商品名</h3>
+                        <div class="bg-white border-4 border-brown25l h-16 rounded-lg ">
+                            <input type="text" name="item[name]" placeholder="商品名" value="{{ old('item.name') }}" class="pl-4 block h-full w-full text-xl justify-items-stretch"/>
+                            <p class="name_error" style="color:red">{{ $errors->first('item.name') }}</p>
+                        </div>
+                    </div>
+                    <div class="block w-5/6 mx-auto mb-8">
+                        <h3 class="sm:text-4xl font-dela">個数</h3>
+                        <div class="bg-white border-4 border-brown25l h-16 rounded-lg">
+                            <input type="number" name="item[stock]" placeholder="個" value="{{ old('item.stock') }}" class="pl-4 block h-full w-full text-xl justify-items-stretch"/>
+                            <p class="stock_error" style="color:red">{{ $errors->first('item.stock') }}</p>
+                        </div>
+                    </div>
+                    <div class="block w-5/6 mx-auto mb-8">
+                        <h3 class="sm:text-4xl font-dela">賞味・消費期限</h3>
+                        <div class="bg-white border-4 border-brown25l h-16 rounded-lg">
+                            <input type="date" name="item[expiration_date]" value="{{ old('item.expiration_date') }}" class="pl-4 block h-full w-full text-xl justify-items-stretch"/>
+                            <p class="expiration_date_error" style="color:red">{{ $errors->first('item.expiration_date') }}</p>
+                        </div>
+                    </div>
+                    <div class="block w-5/6 mx-auto mb-8">
+                        <h3 class="sm:text-4xl font-dela">メモ</h3>
+                        <div class="bg-white border-4 border-brown25l h-32 rounded-lg">
+                            <textarea name="item[memo]" class="pl-4 pt-2 block h-full w-full text-xl justify-items-stretch">{{ old('item.memo') }}</textarea>
+                        </div>
+                    </div>
+                    <div class="flex justify-between mb-8">
+                        <div class="size-32 font-dela border border-blue1 bg-blue1 rounded-full flex justify-center items-center shadow-md p-2 hover:bg-blue2">
+                            <div  class="text-2xl size-28 border-dashed border-4 rounded-full border-white flex items-center justify-center">
+                                <a href="/">戻る</a>
+                            </div>
+                        </div>
+                        <div class="size-32 font-dela border border-red1 bg-red1 rounded-full flex justify-center items-center shadow-md p-2 hover:bg-red2">
+                            <input type="submit" value="追加" class="text-2xl size-28 border-dashed border-4 rounded-full border-white"/>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="stock">
-                <h3>個数</h3>
-                <input type="number" name="item[stock]" value="{{ old('item.stock') }}" >個</input>
-                <p class="stock_error" style="color:red">{{ $errors->first('item.stock') }}</p>
-            </div>
-            
-            
-            <div class="expiration_date">
-                <h3>賞味・消費期限</h3>
-                <input type="date" name="item[expiration_date]" value="{{ old('item.expiration_date') }}"/>
-                <p class="expiration_date_error" style="color:red">{{ $errors->first('item.expiration_date') }}</p>
-            </div>
-            
-            
-            <div class="memo">
-                <h3>メモ</h3>
-                <textarea name="item[memo]">{{ old('item.memo') }}</textarea>
-            </div>
-            <input type="submit" value="追加"/>
-        </form>
-        
-        <div class="footer">
-            <a href="/">戻る</a>
         </div>
     </body>
     
