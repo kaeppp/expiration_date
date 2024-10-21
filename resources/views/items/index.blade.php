@@ -14,7 +14,7 @@
     <body>
         <div class="bg-yellowkou pt-10 px-14 pb-14">
             <div class="p-6 px-20 bg-yelloekou_2">
-                <h1 class="text-center xt-2xl md:text-4xl lg:text-8xl font-dela md:mx-auto container pt-8 pl-6">防災用食品管理リスト</h1>
+                <h1 class="text-center sm:text-2xl md:text-6xl lg:text-8xl font-dela md:mx-auto container pt-8 pl-6">防災用食品管理リスト</h1>
                 {{--<a href="/items/create">新規追加</a>--}}
                 <form action="/items/create" method="post">
                     @csrf
