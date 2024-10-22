@@ -1,66 +1,139 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+![foods_expiration_date](https://github.com/user-attachments/assets/09a62ef5-427c-4e12-a4f7-6026b2d7da8c)
+<br />
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## サービスのURL
 
-## About Laravel
+https://foods-expirationdate-list.com/
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<br />
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## サービスへの想い
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+備蓄用食品を準備することは、地震などの災害時に欠かせません。
 
-## Learning Laravel
+しかし、購入した食品の管理が行き届かず気づかないうちに賞味期限が切れ、結果的に食品ロスが発生してしまうことが多いのが現状です。
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+私自身も、災害に備えて買っておいた水やレトルトカレー、缶詰の期限が切れてしまい、食品ロスを経験しました。
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+こうした問題を解決するために、誰でも手間なく備蓄食品を登録・管理できる「食品ロス対策アプリ」を開発しました。
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+このアプリは、災害に備えると同時に、食品ロスを防ぐためのサポートを目的としています。
 
-## Laravel Sponsors
+<br />
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## サービスの特徴
 
-### Premium Partners
+<dl>
+  <dt>・手間なく食品を登録・管理</dt>
+  <dd>防災用備蓄食品を手軽に登録でき、どの食品がどれだけあるのか一目で確認できます。</dd><br />
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+  <dt>・期限管理機能</dt>
+  <dd>賞味期限1週間以内に迫っているものはオレンジ色、切れているものは赤色で表示を分ける工夫を施しました。</dd>
+</dl> 
 
-## Contributing
+<br />
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 防災用食品管理リストのイメージ
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+![_001](https://github.com/user-attachments/assets/c442832c-8a0f-46ea-9dff-f4827c589069)
 
-## Security Vulnerabilities
+<br />
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 機能
 
-## License
+|![トップ画面](https://github.com/user-attachments/assets/d3e12128-a14a-414d-9f68-ac4e2dcc9048)|![新規追加画面スクショ](https://github.com/user-attachments/assets/1a267167-430d-42e9-bbca-0ccf7ad59edd)|
+|---|---|
+|**【トップ画面】**|**【新規追加画面】**|
+|商品を新規追加する画面に遷移するボタンを実装しました。|商品名・個数・賞味消費期限・任意でメモを登録できる機能を実装しました。|
+|ペジネーション機能を実装し、一覧画面に10件まで表示するようにしました。|一覧に戻るボタン・商品登録するボタンを実装しました。|
+|編集ボタンを押下すれば編集画面に遷移し、削除ボタンを押下すれば削除確認を行うダイアログを表示するようにした、削除機能を実装しました。|バリデーション機能を実装し、エラーメッセージが表示されるよう実装しました。|
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<br />
+
+|![編集画面スクショ](https://github.com/user-attachments/assets/3188ca07-43c2-4b3e-9723-cd1e62f956ff)|![文字色が変わったバージョン](https://github.com/user-attachments/assets/4fb46128-344f-4929-a17c-8587397b7637)|
+|---|---|
+|**【編集画面】**|**【期限管理機能】**|
+|登録した商品を編集する機能を実装し、編集ボタンを押下すれば一覧画面に更新した内容が反映されるようにしました。|登録した賞味期限が1週間を切った場合は「オレンジ色」、過ぎた場合は「赤色」に文字色が変わる機能を実装しました。|
+|戻るボタンを押下すれば一覧画面に遷移するようにしました。||
+
+<br />
+
+| <img src="https://github.com/user-attachments/assets/d6fccf36-7d91-4bf3-b2e5-5e9f34e720c8" width="49%">
+|---|
+|**【自分のスマートフォン（1179×2556）で表示される画面イメージ】**|<br />
+
+<br />
+
+## 防災用食品管理リスト使用時のイメージ
+商品の新規追加から編集、削除まで
+
+![_003](https://github.com/user-attachments/assets/acbee7e5-40c9-44f7-ada3-a95b550dab34)
+
+
+<br />
+
+## テーブル
+
+| CREATE TABLE | items |
+|---|---|
+|id|INT , AUTO_INCREMENT , NOT NULL , PRIMARY KEY|
+|name|VARCHAR(50) , NOT NULL|
+|stock|TINYINT(3) , UNSIGNED , NOT NULL|
+|expiration_date|DATE , NOT NULL|
+|memo|TEXT , NULL|
+|created_at|TIMESTAMP , NOT NULL DEFAULT CURRENT_TIMESTAMP|
+|updated_at|TIMESTAMP , NOT NULL DEFAULT CURRENT_TIMESTAMP|
+|deleted_at|TIMESTAMP , NULL DEFAULT NULL|
+
+<br />
+
+## 使用技術
+
+| Category          | Technology Stack                                     |
+| ----------------- | --------------------------------------------------   |
+| Frontend          | HTML, CSS, JavaScript, Tailwind CSS                       |
+| Backend           | PHP, Laravel 10                          |
+| Infrastructure    | Amazon Web Services, EC2                           |
+| Database          | MySQL                                           |
+| etc.              | Git, GitHub |
+
+<br />
+
+## 苦労した部分
+
+1. **MVCモデルの理解とデバッグ**
+    - 最初は、MVCモデルでどの変数に何が格納され、データがどのように動いて表示されるかの流れを理解するのが難しかったです。
+    - `dd`関数を使って、関数や変数に何が入っているかを都度確認するようにしました。  
+
+2. **エラーへの対処**
+    - 開発していく中で様々なエラーが発生しました。
+    - 上で書いた通りデバッグなどで、1つ1つ問題を切り分けてエラーの原因を解明解決することを徹底しました。  
+
+3. **フロントエンド部分の理解不足（JavaScriptとTailwindCSS）**
+    - PHP中心で学習してきたが、ポートフォリオではJavaScriptやTailwindCSSを使った実装が必要で、特に期限切迫を知らせる機能を実装する際に躓きました。
+    - 基礎から学び直し、メンターの助言を受けながら細かく検索して進め、コードを実際に書いてフィードバックをもらい、最終的に機能を完成させました。完成後は再現できるようにコードを確認し、理解を深めました。
+
+4. **モチベーション管理**
+    - うまくいかない時に焦りや落ち込みを感じることがありましたが、「最初はうまくいかなくて当然」と気持ちを切り替えることを意識しました。
+    - ToDoリストを細かく分けて、一つずつ着実に解消することで進捗を出し、後から進めなかったことに対する罪悪感を減らすように努めました。
+
+<br />
+
+## 今後の展望
+
+本プロダクトは4つのフェーズに分けて、段階的に開発を進めています。  
+
+現在はフェーズ1として、買った商品を登録して自分の為に買ったものを管理できる機能を実装しました。
+
+フェーズ2では認証機能を追加し、個人・家族間でリスト管理ができる機能を実装していきます。 
+
+フェーズ3以降では、検索機能や登録されたメールアドレスに通知が届くリマインド機能を追加し食品ロスの予防に努めます。
+
+- フェーズ1：買った商品を登録して自分の為に買ったものを管理できる機能の実装します。
+
+- フェーズ2：ログインIDとパスワードでの認証機能を実装し、個人・家族間でリスト管理ができる機能を追加します。
+
+- フェーズ3：リストに追加した商品の検索機能を追加します。
+
+- フェーズ4：期限が近づいた商品があれば登録したメールアドレスにメールが届く通知機能を追加していきます。
